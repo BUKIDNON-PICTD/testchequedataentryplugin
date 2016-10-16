@@ -1,0 +1,10 @@
+<workunit schemaName="checktransmittal">
+    <invokers>
+        <invoker type="checktransmittal:create" caption="Transmittal" action="create" role="CHECKTRANSMITTAL"/>
+        <invoker type="checktransmittal:open" caption="Transmittal" action="open" role="CHECKTRANSMITTAL"/>
+    </invokers>
+    <code class="test.check.models.CheckTransmittalModel" />
+    <pages>
+        <page template="test.check.views.CheckTransmittalPage" />
+    </pages>
+</workunit>

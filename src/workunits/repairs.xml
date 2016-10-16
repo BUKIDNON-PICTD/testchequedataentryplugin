@@ -1,0 +1,10 @@
+<workunit schemaName="repairs">
+    <invokers>
+        <invoker type="repairs:create" caption="Repairs" action="create"/>
+        <invoker type="repairs:open" caption="Repairs" action="open"/>
+    </invokers>
+    <code class="test.repairs.models.RepairModel" />
+    <pages>
+        <page template="test.repairs.views.RepairPage" />
+    </pages>
+</workunit>

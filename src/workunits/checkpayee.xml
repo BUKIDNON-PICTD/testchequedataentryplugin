@@ -1,0 +1,10 @@
+<workunit schemaName="checkpayee">
+    <invokers>
+        <invoker type="checkpayee:create" caption="Payee Capture" action="create" role="CHECKMASTER"/>
+        <invoker type="checkpayee:open" caption="Payee Capture" action="open" role="CHECKMASTER"/>
+    </invokers>
+    <code class="test.check.models.CheckPayeeModel" />
+    <pages>
+        <page template="test.check.views.CheckPayeePage" />
+    </pages>
+</workunit>

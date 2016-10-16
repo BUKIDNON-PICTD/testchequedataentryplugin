@@ -1,0 +1,10 @@
+<workunit schemaName="housing_ledger">
+    <invokers>
+        <invoker type="housing_ledger:create" caption="Housing Ledger" action="create"/>
+        <invoker type="housing_ledger:open" caption="Housing Ledger" action="open"/>
+    </invokers>
+    <code class="tagabukid.housing.models.HousingLedgerModel" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingLedgerPage" />
+    </pages>
+</workunit>

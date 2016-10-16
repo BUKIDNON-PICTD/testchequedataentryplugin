@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="checkmainprintdbpnewreport"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="payee" class="java.lang.String"/>
+	<field name="checknumber" class="java.lang.Integer"/>
+	<field name="checkdate" class="java.util.Date"/>
+	<field name="checkamt" class="java.math.BigDecimal"/>
+	<field name="checkamtwords" class="java.lang.String"/>
+	<field name="checkaccount" class="java.lang.String"/>
+	<field name="checkadd" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="184"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="69"
+						y="34"
+						width="360"
+						height="18"
+						key="textField"/>
+					<box leftPadding="4"></box>
+					<textElement>
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{payee}+"*"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="57"
+						y="57"
+						width="478"
+						height="18"
+						key="textField"/>
+					<box leftPadding="4"></box>
+					<textElement>
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{checkamtwords}+"*"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="386"
+						y="36"
+						width="109"
+						height="18"
+						key="textField"/>
+					<box leftPadding="4" rightPadding="3"></box>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{checkamt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="240"
+						y="8"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box leftPadding="4"></box>
+					<textElement>
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{checkadd}+$F{checknumber}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="377"
+						y="10"
+						width="136"
+						height="18"
+						key="textField"/>
+					<box leftPadding="4" rightPadding="3"></box>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{checkdate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="53"
+						y="13"
+						width="108"
+						height="16"
+						key="staticText-1"/>
+					<box leftPadding="4"></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TO PAYEE ONLY]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

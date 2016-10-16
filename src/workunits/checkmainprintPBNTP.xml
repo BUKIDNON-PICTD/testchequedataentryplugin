@@ -1,0 +1,15 @@
+<workunit>
+    <invokers>
+      <!--  <invoker folderid="/explorer/training/personnel" action="create" caption="Personnel" target="popup" > </invoker>
+        <invoker folderid="/home/training/personnel" action="create" caption="Personnel" target="popup" 
+        > </invoker>  -->
+        <invoker type="checkmain:form:formActions" action="preview" visibleWhen="#{entity.state=='DRAFT' &amp;&amp; entity.checktype=='PostalBank-NTP'}" caption="Print Check" /> 
+        <invoker type="formActions" action="_close" caption="Close" mnemonic="c"> </invoker>
+        
+           
+    </invokers>
+    <code class="test.check.reports.checkMainPrintPBNTPController"/>
+    <pages>
+        <page name="report" template="com.rameses.osiris2.common.ui.ReportPreviewPage" />
+    </pages>
+</workunit>

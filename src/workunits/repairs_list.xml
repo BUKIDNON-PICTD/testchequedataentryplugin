@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="repairs">
+    <invokers>
+        <invoker folderid="home/repair" caption="Repairs" action="init"/>
+    </invokers>
+</workunit>

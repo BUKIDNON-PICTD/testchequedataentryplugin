@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checkaccount">
+    <invokers>
+        <invoker folderid="home/check" caption="Cheque Accounts" action="init" role="CHECKMASTER"/>
+    </invokers>
+</workunit>

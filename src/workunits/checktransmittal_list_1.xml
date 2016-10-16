@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checktransmittal">
+    <invokers>
+        <invoker folderid="home/check" caption="Transmittals" action="init" role="CHECKTRANSMITTAL"/>
+    </invokers>
+</workunit>

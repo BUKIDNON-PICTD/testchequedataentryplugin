@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="housing_ledger">
+    <invokers>
+        <invoker folderid="home/housing" caption="Housing Ledger" action="init"/>
+    </invokers>
+</workunit>
