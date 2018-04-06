@@ -41,7 +41,7 @@
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
 						x="64"
-						y="39"
+						y="34"
 						width="368"
 						height="18"
 						key="textField"/>
@@ -51,10 +51,10 @@
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{payee}+"*"]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
 						x="44"
-						y="62"
+						y="57"
 						width="518"
 						height="18"
 						key="textField"/>
@@ -67,7 +67,7 @@
 				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
 						x="401"
-						y="38"
+						y="35"
 						width="109"
 						height="18"
 						key="textField"/>
@@ -93,7 +93,7 @@
 				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
 						x="377"
-						y="12"
+						y="9"
 						width="136"
 						height="18"
 						key="textField"/>

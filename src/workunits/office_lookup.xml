@@ -14,7 +14,7 @@
 
         class HrisOrgLookupController extends LookupController
         {
-            @Service("TagabukidDTSLookupService")
+            @Service("TagabukidSubayLookupService")
             def svc
 
             def state;
@@ -27,7 +27,7 @@
             }
 
             List fetchList( Map params ) { 
-                return svc.lookupHrisOrg(params)
+                return svc.lookupOrgUnit(params)
             }
         }  
 

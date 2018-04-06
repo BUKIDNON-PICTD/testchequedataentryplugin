@@ -2,6 +2,8 @@
     <invokers>
         <invoker type="checkmain:create" caption="Check Print" action="create" role="CHECKPRINT"/>
         <invoker type="checkmain:open" caption="Check Print" action="open" role="CHECKPRINT"/>
+        <invoker type="formActions" caption="Cancel" action="cancel" 
+                 role="CHECKPRINT" visibleWhen="#{allowApprove==true}"/>
     </invokers>
     <code class="test.check.models.CheckMainModel" />
     <pages>

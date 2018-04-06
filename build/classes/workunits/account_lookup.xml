@@ -1,0 +1,8 @@
+<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" 
+         schemaName="checkaccount">
+  <invokers>
+      <invoker type="checkaccount:lookup" caption="Lookup Account" 
+                 action="init" target="popup" height="350"  
+                 cols="accountname"/>
+  </invokers>
+</workunit>

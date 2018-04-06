@@ -1,0 +1,10 @@
+<workunit schemaName="checkaccount">
+    <invokers>
+        <invoker type="checkaccount:create" caption="Fund/Account Capture" action="create" role="CHECKMASTER"/>
+        <invoker type="checkaccount:open" caption="Fund/Account Capture" action="open" role="CHECKMASTER"/>
+    </invokers>
+    <code class="test.check.models.CheckAccountModel" />
+    <pages>
+        <page template="test.check.views.CheckAccountPage" />
+    </pages>
+</workunit>

@@ -12,12 +12,12 @@ import com.rameses.seti2.views.CrudFormPage;
  * @author dell
  */
 @Template(CrudFormPage.class)
-public class CheckMainPage extends javax.swing.JPanel {
+public class AdaPage extends javax.swing.JPanel {
 
     /**
      * Creates new form HousingLedgerPage
      */
-    public CheckMainPage() {
+    public AdaPage() {
         initComponents();
     }
 
@@ -34,40 +34,25 @@ public class CheckMainPage extends javax.swing.JPanel {
         xPanel1 = new com.rameses.rcp.control.XPanel();
         xFormPanel1 = new com.rameses.rcp.control.XFormPanel();
         xDateField1 = new com.rameses.rcp.control.XDateField();
-        xLookupField1 = new com.rameses.rcp.control.XLookupField();
         xTextField1 = new com.rameses.rcp.control.XTextField();
-        xIntegerField1 = new com.rameses.rcp.control.XIntegerField();
         xDecimalField1 = new com.rameses.rcp.control.XDecimalField();
         xLookupField3 = new com.rameses.rcp.control.XLookupField();
-        xLookupField2 = new com.rameses.rcp.control.XLookupField();
-        xComboBox1 = new com.rameses.rcp.control.XComboBox();
+        xTextField2 = new com.rameses.rcp.control.XTextField();
 
         xFormPanel1.setCaptionWidth(120);
 
         xDateField1.setCaption("Date");
-        xDateField1.setName("entity.checkdate"); // NOI18N
+        xDateField1.setName("entity.txndate"); // NOI18N
         xDateField1.setReadonly(true);
         xFormPanel1.add(xDateField1);
 
-        xLookupField1.setCaption("Payee");
-        xLookupField1.setExpression("#{entity.payee}");
-        xLookupField1.setHandler("lookupPayee");
-        xLookupField1.setName("entity.payee"); // NOI18N
-        xLookupField1.setPreferredSize(new java.awt.Dimension(0, 20));
-        xFormPanel1.add(xLookupField1);
-
-        xTextField1.setCaption("Check Add");
-        xTextField1.setName("entity.checkadd"); // NOI18N
+        xTextField1.setCaption("Control No.");
+        xTextField1.setName("entity.controlno"); // NOI18N
         xTextField1.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xTextField1);
 
-        xIntegerField1.setCaption("Check Number");
-        xIntegerField1.setName("entity.checknumber"); // NOI18N
-        xIntegerField1.setPreferredSize(new java.awt.Dimension(0, 20));
-        xFormPanel1.add(xIntegerField1);
-
         xDecimalField1.setCaption("Amount");
-        xDecimalField1.setName("entity.checkamt"); // NOI18N
+        xDecimalField1.setName("entity.adaamt"); // NOI18N
         xDecimalField1.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xDecimalField1);
 
@@ -78,18 +63,10 @@ public class CheckMainPage extends javax.swing.JPanel {
         xLookupField3.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xLookupField3);
 
-        xLookupField2.setCaption("Office Origin");
-        xLookupField2.setExpression("#{entity.officeorigin}");
-        xLookupField2.setHandler("lookupOffices");
-        xLookupField2.setName("entity.officeorigin"); // NOI18N
-        xLookupField2.setPreferredSize(new java.awt.Dimension(0, 20));
-        xFormPanel1.add(xLookupField2);
-
-        xComboBox1.setCaption("Check Type");
-        xComboBox1.setItems("checktypes");
-        xComboBox1.setName("entity.checktype"); // NOI18N
-        xComboBox1.setPreferredSize(new java.awt.Dimension(300, 20));
-        xFormPanel1.add(xComboBox1);
+        xTextField2.setCaption("Particulars");
+        xTextField2.setName("entity.particulars"); // NOI18N
+        xTextField2.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel1.add(xTextField2);
 
         javax.swing.GroupLayout xPanel1Layout = new javax.swing.GroupLayout(xPanel1);
         xPanel1.setLayout(xPanel1Layout);
@@ -104,10 +81,10 @@ public class CheckMainPage extends javax.swing.JPanel {
             xPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(xPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xFormPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(xFormPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
         );
 
-        xTabbedPane1.addTab("Cheque Info", xPanel1);
+        xTabbedPane1.addTab("ADA Info", xPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -122,21 +99,18 @@ public class CheckMainPage extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                .addComponent(xTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.rameses.rcp.control.XComboBox xComboBox1;
     private com.rameses.rcp.control.XDateField xDateField1;
     private com.rameses.rcp.control.XDecimalField xDecimalField1;
     private com.rameses.rcp.control.XFormPanel xFormPanel1;
-    private com.rameses.rcp.control.XIntegerField xIntegerField1;
-    private com.rameses.rcp.control.XLookupField xLookupField1;
-    private com.rameses.rcp.control.XLookupField xLookupField2;
     private com.rameses.rcp.control.XLookupField xLookupField3;
     private com.rameses.rcp.control.XPanel xPanel1;
     private com.rameses.rcp.control.XTabbedPane xTabbedPane1;
     private com.rameses.rcp.control.XTextField xTextField1;
+    private com.rameses.rcp.control.XTextField xTextField2;
     // End of variables declaration//GEN-END:variables
 }

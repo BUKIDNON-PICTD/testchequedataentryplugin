@@ -222,7 +222,7 @@ Provincial Capitol
 						height="19"
 						key="staticText-10"
 						positionType="Float"/>
-					<box>					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<box leftPadding="2">					<pen lineWidth="0.5" lineStyle="Solid"/>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
@@ -241,7 +241,7 @@ Provincial Capitol
 						height="19"
 						key="staticText-11"
 						positionType="Float"/>
-					<box>					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<box leftPadding="2">					<pen lineWidth="0.5" lineStyle="Solid"/>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
@@ -260,7 +260,7 @@ Provincial Capitol
 						height="19"
 						key="staticText-12"
 						positionType="Float"/>
-					<box>					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<box leftPadding="2">					<pen lineWidth="0.5" lineStyle="Solid"/>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
@@ -317,7 +317,7 @@ Provincial Capitol
 						height="19"
 						key="staticText-15"
 						positionType="Float"/>
-					<box>					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<box leftPadding="2">					<pen lineWidth="0.5" lineStyle="Solid"/>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.5" lineStyle="Solid"/>

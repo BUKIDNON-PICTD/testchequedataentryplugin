@@ -1,0 +1,11 @@
+<workunit schemaName="estrunningbalance">
+    <invokers>
+        <invoker type="estrunningbalance:create" caption="Account Balances" action="create" role="CHECKPRINT"/>
+        <invoker type="estrunningbalance:open" caption="Account Balances" action="open" role="CHECKPRINT"/>
+        
+    </invokers>
+    <code class="test.check.models.EstRunningBalanceController" />
+    <pages>
+        <page template="test.check.views.EstRunningBalancePage" />
+    </pages>
+</workunit>

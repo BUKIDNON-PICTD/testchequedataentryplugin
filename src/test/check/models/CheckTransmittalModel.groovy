@@ -15,11 +15,13 @@ class CheckTransmittalModel extends CrudFormModel{
     @Service('SequenceService')
     def seqSvc
     
-     public void afterCreate(){
+    boolean editAllowed = false;
+    
+    public void afterCreate(){
         entity.datecreated = dtSvc.getServerDate();
         //entity.createdby_name = OsirisContext.env.FULLNAME;
         //entity.createdby_id = OsirisContext.env.USERID;
-        entity.transmittalnum = dtSvc.getServerYear() +"-"+ dtSvc.getServerMonth() + seqSvc.getNextFormattedSeries('check' + dtSvc.getServerYear() + dtSvc.getServerMonth()) ;
+        //entity.transmittalnum = dtSvc.getServerYear() +"-"+ dtSvc.getServerMonth() + seqSvc.getNextFormattedSeries('check' + dtSvc.getServerYear() + dtSvc.getServerMonth()) ;
         entity.items = [];
     
     }
@@ -28,6 +30,9 @@ class CheckTransmittalModel extends CrudFormModel{
         if(!entity.items)throw new Exception("There must be checks")
         
         entity.transtate = "CLOSED";
+        
+        entity.transmittalnum = dtSvc.getServerYear() +"-"+ dtSvc.getServerMonth() + seqSvc.getNextFormattedSeries('check' + dtSvc.getServerYear() + dtSvc.getServerMonth()) ;
+        
     }
     
     
@@ -36,10 +41,11 @@ class CheckTransmittalModel extends CrudFormModel{
     def checkHandler = [
         
         
-        fetchList: { o->
+        fetchList: { 
             
             if (!entity.transtate)
             {
+               
                 def p = [_schemaname: 'checkmain'];
                 p.findBy = [ 'state': 'DRAFT'];
                 p.select = "objid,checknumber,payee,checkamt";
@@ -49,12 +55,10 @@ class CheckTransmittalModel extends CrudFormModel{
                     it.transmittalid = entity.objid;
                     it.checkid = it.objid;
             
-            }              
+                }              
             
                 return entity.items;
-            }
-            
-            else
+            }else
             {
                 def p = [_schemaname: 'checktransmittalitems'];
                 p.findBy = [ 'transmittalid': entity.objid];
@@ -67,9 +71,9 @@ class CheckTransmittalModel extends CrudFormModel{
      
     ] as EditorListModel;
 
-//    def capturePayment() {
-//        return Inv.lookupOpener("housing_ledger_capture_payment", [parent: entity ] );
-//    }
+    //    def capturePayment() {
+    //        return Inv.lookupOpener("housing_ledger_capture_payment", [parent: entity ] );
+    //    }
 
     void refreshItem() {
         checkHandler.reload();
