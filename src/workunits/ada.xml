@@ -1,0 +1,10 @@
+<workunit schemaName="checkmain">
+    <invokers>
+        <invoker type="checkmain:create" caption="Check Print" action="create" role="CHECKPRINT"/>
+        <invoker type="checkmain:open" caption="Check Print" action="open" role="CHECKPRINT"/>
+    </invokers>
+    <code class="test.check.models.CheckMainModel" />
+    <pages>
+        <page template="test.check.views.CheckMainPage" />
+    </pages>
+</workunit>
