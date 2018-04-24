@@ -1,7 +1,7 @@
 <workunit schemaName="checkaccount">
     <invokers>
-        <invoker type="checkaccount:create" caption="Fund/Account Capture" action="create" role="CHECKMASTER"/>
-        <invoker type="checkaccount:open" caption="Fund/Account Capture" action="open" role="CHECKMASTER"/>
+        <invoker type="checkaccount:create" caption="Fund/Account Capture" action="create" role="CHECKMASTERACCOUNT"/>
+        <invoker type="checkaccount:open" caption="Fund/Account Capture" action="open" role="CHECKMASTERACCOUNT"/>
     </invokers>
     <code class="test.check.models.CheckAccountModel" />
     <pages>

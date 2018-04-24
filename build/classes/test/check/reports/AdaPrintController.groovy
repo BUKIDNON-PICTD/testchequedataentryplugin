@@ -8,26 +8,27 @@ import com.rameses.osiris2.reports.*;
 import com.rameses.gov.etracs.rpt.common.*;
 import com.rameses.etracs.shared.*;
 
-public class checkTransmittalReportController extends ReportController
+public class AdaPrintController extends ReportController
 {
    @Service('testcheckService')
    def svc;
-
    
-   String title = 'Transmittal';
+   //@Service("ReportParameterService")
+   //def paramSvc;
+   
+  // def query = [:];
+   
+   
+   String title = 'Print AD/CA';
    String reportPath = 'test/check/reports/';
-   String reportName = reportPath + 'checktransmittalreportnew.jasper';
+   String reportName = reportPath + 'adaprintreport.jasper';
    
-   def entity;
+   
    
    public def getReportData(){
-       
-       //return svc.getCheckReportData(entity);
-       def a = svc.getCheckTransmittalData(entity)
- 
-       return a;
-       
-       
+       //entity is personnel info akin to the platform
+//       MsgBox.alert(svc.getReportData(entity))
+       return svc.getAdaReportData(entity);
        
    }
    
@@ -38,12 +39,10 @@ public class checkTransmittalReportController extends ReportController
 //        return params 
 //   }
    
-   //SubReport[] getSubReports(){
-    //   return[
-     //      new SubReport('CHECKITEMS', reportPath+'checktransmittalreportitems.jasper'), 
-     //  ]
-  // }
-   
-    
+//   SubReport[] getSubReports(){
+//       return[
+//           new SubReport('CHECKITEMS', reportPath+'checktransmittalreportitems.jasper'), 
+//       ]
+//   }
 }
 

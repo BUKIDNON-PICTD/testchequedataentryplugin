@@ -18,17 +18,21 @@ class EstRunningBalanceController extends CrudFormModel{
     @Service('TestchequedataentryReportService')
     def checkService
     
+    boolean editAllowed = false;
+    
      public void afterCreate(){
         entity.createdby_date = dtSvc.getBasicServerDate();
         //entity.state = 'DRAFT';
     }
     
     public void beforeSave(o){
+        if(validateAccountBeforeSave(entity))throw new Exception("Account already exists!");
         entity.currentlineno = 1;
         entity.totaldebit = 0.00;
         entity.totalcredit = 0.00;
         entity.endbalance = entity.beginningbalance;
         entity.state = "DRAFT";
+        
     }
     
     /* ========== Lookup Account ========= */
@@ -41,6 +45,11 @@ class EstRunningBalanceController extends CrudFormModel{
                },
            ])
    }
+   
+    def validateAccountBeforeSave(o){
+        
+        return checkService.validateAccountBeforeSave(o);
+    }
    
     
 }

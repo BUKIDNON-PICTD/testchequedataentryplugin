@@ -18,8 +18,14 @@ class CheckMainModel extends CrudFormModel{
     @Service('testcheckService')
     def checkService
     
+    @Service('TestchequedataentryReportService')
+    def checkrptService
+    
     @Service("ListService")
     def service;
+    
+    @Service("EstRunningBalancePostService")
+    def rbService;
     
     boolean editAllowed = false;
     
@@ -63,6 +69,7 @@ class CheckMainModel extends CrudFormModel{
                onselect :{
                    entity.checkaccount = it.accountname;
                    entity.checkaccountid = it.objid;
+                   entity.balance = new java.text.DecimalFormat("#,##0.00").format(checkrptService.getAmountPerAccount(it.objid).endbalance);
                    binding.refresh(); 
                },
            ])
@@ -92,34 +99,11 @@ class CheckMainModel extends CrudFormModel{
                objid : entity.objid, 
                state : 'CANCELLED' 
             ]); 
-            loadData(); 
+            loadData();
+            entity.reason = (MsgBox.prompt('Reason for cancelling?'))
+            rbService.postCancelledCheck(entity);
         }
     }
     
-    /* ========== Suggest Payee ========= */
-   // def payeeLookup = [
-             //   fetchList: { o->
-                    //  o.pname = 'payeename';
-              //      return checkService.getPayeeList(o);
-                    
-             //   }
-          //  ] as SuggestModel; 
-            
-    //def payeeLookup = [
-      //  fetchList: { o->
-        //    def p = [_schemaname: 'checkpayee'];
-          //  p.where = [ 'payeename like :pname', [pname: params.searchtext+'%'] ];
-           // p.orderBy = 'payeename';
-           // p.select = "payeename";
-           // return queryService.getList( p );
-        //}
-    //] as SuggestModel;
-    
-    //def payeeLookup = [
-      //          fetchList: { o->
-        //            o.name = 'payeename';
-          //          return service.getList(o);
-            //    }
-            //] as SuggestModel; 
-    
+  
 }

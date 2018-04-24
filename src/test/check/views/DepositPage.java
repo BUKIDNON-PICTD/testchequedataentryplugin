@@ -12,12 +12,12 @@ import com.rameses.seti2.views.CrudFormPage;
  * @author dell
  */
 @Template(CrudFormPage.class)
-public class CheckAccountPage extends javax.swing.JPanel {
+public class DepositPage extends javax.swing.JPanel {
 
     /**
      * Creates new form HousingLedgerPage
      */
-    public CheckAccountPage() {
+    public DepositPage() {
         initComponents();
     }
 
@@ -33,20 +33,40 @@ public class CheckAccountPage extends javax.swing.JPanel {
         xTabbedPane1 = new com.rameses.rcp.control.XTabbedPane();
         xPanel1 = new com.rameses.rcp.control.XPanel();
         xFormPanel1 = new com.rameses.rcp.control.XFormPanel();
+        xDateField1 = new com.rameses.rcp.control.XDateField();
+        xLookupField3 = new com.rameses.rcp.control.XLookupField();
+        xDecimalField1 = new com.rameses.rcp.control.XDecimalField();
+        xTextField1 = new com.rameses.rcp.control.XTextField();
         xTextField2 = new com.rameses.rcp.control.XTextField();
-        xTextField3 = new com.rameses.rcp.control.XTextField();
 
         xFormPanel1.setCaptionWidth(120);
 
-        xTextField2.setCaption("Account Name");
-        xTextField2.setName("entity.accountname"); // NOI18N
+        xDateField1.setCaption("Date");
+        xDateField1.setName("entity.txndate"); // NOI18N
+        xDateField1.setReadonly(true);
+        xFormPanel1.add(xDateField1);
+
+        xLookupField3.setCaption("Fund/Account");
+        xLookupField3.setExpression("#{entity.checkaccount}");
+        xLookupField3.setHandler("lookupAccount");
+        xLookupField3.setName("entity.checkaccount"); // NOI18N
+        xLookupField3.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel1.add(xLookupField3);
+
+        xDecimalField1.setCaption("Amount");
+        xDecimalField1.setName("entity.depamt"); // NOI18N
+        xDecimalField1.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel1.add(xDecimalField1);
+
+        xTextField1.setCaption("Voucher No.");
+        xTextField1.setName("entity.voucherno"); // NOI18N
+        xTextField1.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel1.add(xTextField1);
+
+        xTextField2.setCaption("RJEV / RDCD No.");
+        xTextField2.setName("entity.rjevno"); // NOI18N
         xTextField2.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xTextField2);
-
-        xTextField3.setCaption("Account Number");
-        xTextField3.setName("entity.accountno"); // NOI18N
-        xTextField3.setPreferredSize(new java.awt.Dimension(0, 20));
-        xFormPanel1.add(xTextField3);
 
         javax.swing.GroupLayout xPanel1Layout = new javax.swing.GroupLayout(xPanel1);
         xPanel1.setLayout(xPanel1Layout);
@@ -61,11 +81,10 @@ public class CheckAccountPage extends javax.swing.JPanel {
             xPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(xPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xFormPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(xFormPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        xTabbedPane1.addTab("Account Capture", xPanel1);
+        xTabbedPane1.addTab("Deposit Info", xPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -80,15 +99,18 @@ public class CheckAccountPage extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(xTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.rameses.rcp.control.XDateField xDateField1;
+    private com.rameses.rcp.control.XDecimalField xDecimalField1;
     private com.rameses.rcp.control.XFormPanel xFormPanel1;
+    private com.rameses.rcp.control.XLookupField xLookupField3;
     private com.rameses.rcp.control.XPanel xPanel1;
     private com.rameses.rcp.control.XTabbedPane xTabbedPane1;
+    private com.rameses.rcp.control.XTextField xTextField1;
     private com.rameses.rcp.control.XTextField xTextField2;
-    private com.rameses.rcp.control.XTextField xTextField3;
     // End of variables declaration//GEN-END:variables
 }

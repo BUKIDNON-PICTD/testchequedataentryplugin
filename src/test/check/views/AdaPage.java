@@ -37,7 +37,11 @@ public class AdaPage extends javax.swing.JPanel {
         xTextField1 = new com.rameses.rcp.control.XTextField();
         xDecimalField1 = new com.rameses.rcp.control.XDecimalField();
         xLookupField3 = new com.rameses.rcp.control.XLookupField();
+        xTextField3 = new com.rameses.rcp.control.XTextField();
         xTextField2 = new com.rameses.rcp.control.XTextField();
+        xTextField4 = new com.rameses.rcp.control.XTextField();
+        xLabel1 = new com.rameses.rcp.control.XLabel();
+        xLabel2 = new com.rameses.rcp.control.XLabel();
 
         xFormPanel1.setCaptionWidth(120);
 
@@ -49,6 +53,7 @@ public class AdaPage extends javax.swing.JPanel {
         xTextField1.setCaption("Control No.");
         xTextField1.setName("entity.controlno"); // NOI18N
         xTextField1.setPreferredSize(new java.awt.Dimension(0, 20));
+        xTextField1.setReadonly(true);
         xFormPanel1.add(xTextField1);
 
         xDecimalField1.setCaption("Amount");
@@ -63,10 +68,20 @@ public class AdaPage extends javax.swing.JPanel {
         xLookupField3.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xLookupField3);
 
+        xTextField3.setCaption("For");
+        xTextField3.setName("entity.people"); // NOI18N
+        xTextField3.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel1.add(xTextField3);
+
         xTextField2.setCaption("Particulars");
         xTextField2.setName("entity.particulars"); // NOI18N
         xTextField2.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xTextField2);
+
+        xTextField4.setCaption("Cashbook No.");
+        xTextField4.setName("entity.cashbookno"); // NOI18N
+        xTextField4.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel1.add(xTextField4);
 
         javax.swing.GroupLayout xPanel1Layout = new javax.swing.GroupLayout(xPanel1);
         xPanel1.setLayout(xPanel1Layout);
@@ -81,10 +96,20 @@ public class AdaPage extends javax.swing.JPanel {
             xPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(xPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xFormPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
+                .addComponent(xFormPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
         );
 
         xTabbedPane1.addTab("ADA Info", xPanel1);
+
+        xLabel1.setCaption("Remaining Balance for the Account");
+        xLabel1.setExpression("Remaining Balance for the Account:");
+        xLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        xLabel1.setVisibleWhen("mode=='create'");
+
+        xLabel2.setCaption("Remaining Balance for the Account");
+        xLabel2.setExpression("#{entity.balance}");
+        xLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        xLabel2.setName("entity.balance"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,24 +118,38 @@ public class AdaPage extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(xTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(xLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(xLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                .addComponent(xTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(xLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(xLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.rameses.rcp.control.XDateField xDateField1;
     private com.rameses.rcp.control.XDecimalField xDecimalField1;
     private com.rameses.rcp.control.XFormPanel xFormPanel1;
+    private com.rameses.rcp.control.XLabel xLabel1;
+    private com.rameses.rcp.control.XLabel xLabel2;
     private com.rameses.rcp.control.XLookupField xLookupField3;
     private com.rameses.rcp.control.XPanel xPanel1;
     private com.rameses.rcp.control.XTabbedPane xTabbedPane1;
     private com.rameses.rcp.control.XTextField xTextField1;
     private com.rameses.rcp.control.XTextField xTextField2;
+    private com.rameses.rcp.control.XTextField xTextField3;
+    private com.rameses.rcp.control.XTextField xTextField4;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,7 @@
 <workunit schemaName="estrunningbalance">
     <invokers>
-        <invoker type="estrunningbalance:create" caption="Account Balances" action="create" role="CHECKPRINT"/>
-        <invoker type="estrunningbalance:open" caption="Account Balances" action="open" role="CHECKPRINT"/>
+        <invoker type="estrunningbalance:create" caption="Account Balances" action="create" role="RB"/>
+        <invoker type="estrunningbalance:open" caption="Account Balances" action="open" role="RB"/>
         
     </invokers>
     <code class="test.check.models.EstRunningBalanceController" />

@@ -1,0 +1,10 @@
+<workunit schemaName="tisoped">
+    <invokers>
+        <invoker type="tisoped:create" caption="Capture Deposit" action="create" role="CHECKDEPOSIT"/>
+        <invoker type="tisoped:open" caption="Capture Deposit" action="open" role="CHECKDEPOSIT"/>
+    </invokers>
+    <code class="test.check.models.DepositModel" />
+    <pages>
+        <page template="test.check.views.DepositPage" />
+    </pages>
+</workunit>

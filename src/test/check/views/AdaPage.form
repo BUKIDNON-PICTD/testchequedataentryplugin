@@ -19,7 +19,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="xTabbedPane1" min="-2" pref="637" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="xLabel1" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                  <Component id="xLabel2" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="55" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -27,8 +32,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="xTabbedPane1" pref="166" max="32767" attributes="0"/>
+              <Component id="xTabbedPane1" pref="207" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="xLabel1" min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="xLabel2" min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,7 +73,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="xFormPanel1" pref="127" max="32767" attributes="0"/>
+                      <Component id="xFormPanel1" pref="168" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -86,6 +98,7 @@
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[0, 20]"/>
                     </Property>
+                    <Property name="readonly" type="boolean" value="true"/>
                   </Properties>
                 </Component>
                 <Component class="com.rameses.rcp.control.XDecimalField" name="xDecimalField1">
@@ -108,10 +121,28 @@
                     </Property>
                   </Properties>
                 </Component>
+                <Component class="com.rameses.rcp.control.XTextField" name="xTextField3">
+                  <Properties>
+                    <Property name="caption" type="java.lang.String" value="For"/>
+                    <Property name="name" type="java.lang.String" value="entity.people" noResource="true"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[0, 20]"/>
+                    </Property>
+                  </Properties>
+                </Component>
                 <Component class="com.rameses.rcp.control.XTextField" name="xTextField2">
                   <Properties>
                     <Property name="caption" type="java.lang.String" value="Particulars"/>
                     <Property name="name" type="java.lang.String" value="entity.particulars" noResource="true"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[0, 20]"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="com.rameses.rcp.control.XTextField" name="xTextField4">
+                  <Properties>
+                    <Property name="caption" type="java.lang.String" value="Cashbook No."/>
+                    <Property name="name" type="java.lang.String" value="entity.cashbookno" noResource="true"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[0, 20]"/>
                     </Property>
@@ -123,5 +154,25 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="com.rameses.rcp.control.XLabel" name="xLabel1">
+      <Properties>
+        <Property name="caption" type="java.lang.String" value="Remaining Balance for the Account"/>
+        <Property name="expression" type="java.lang.String" value="Remaining Balance for the Account:"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="visibleWhen" type="java.lang.String" value="mode==&apos;create&apos;"/>
+      </Properties>
+    </Component>
+    <Component class="com.rameses.rcp.control.XLabel" name="xLabel2">
+      <Properties>
+        <Property name="caption" type="java.lang.String" value="Remaining Balance for the Account"/>
+        <Property name="expression" type="java.lang.String" value="#{entity.balance}"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="1"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="entity.balance" noResource="true"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
