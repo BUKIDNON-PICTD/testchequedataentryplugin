@@ -260,11 +260,10 @@ Name and Signature of Authorized Signatory]]></text>
 						key="textField-3"/>
 					<box></box>
 					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
-						<font size="12"/>
+						<font size="10"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["Please debit my/our Account, Provincial Government of Bukidnon <style isBold=\"true\">"+$F{checkaccount}+"</style>"
-+"  "+"\nthe amount of <style isBold=\"true\">"+$F{adaamtwords}+"</style>" + "  OR  "+"<style isBold=\"true\">"+(new java.text.DecimalFormat("#,##0.00").format($F{adaamt}))+"</style>"
-]]></textFieldExpression>
++"  "+"\nthe amount of <style isBold=\"true\">"+$F{adaamtwords}+"</style>" + "  OR  "+"<style isBold=\"true\">"+(new java.text.DecimalFormat("#,##0.00").format($F{adaamt}))+"</style>"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
@@ -289,9 +288,9 @@ Name and Signature of Authorized Signatory]]></text>
 						key="textField-5"/>
 					<box></box>
 					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
-						<font size="12"/>
+						<font size="10"/>
 					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["and credit salaries for" ]]></textFieldExpression>
+				<textFieldExpression   class="java.lang.String"><![CDATA["and credit salaries for"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
@@ -303,7 +302,7 @@ Name and Signature of Authorized Signatory]]></text>
 					<box>					<bottomPen lineWidth="0.5"/>
 </box>
 					<textElement>
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{people}]]></textFieldExpression>
 				</textField>
@@ -318,7 +317,7 @@ Name and Signature of Authorized Signatory]]></text>
 					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
 						<font size="12"/>
 					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["of the Provincial" ]]></textFieldExpression>
+				<textFieldExpression   class="java.lang.String"><![CDATA["of the Provincial"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
@@ -329,11 +328,9 @@ Name and Signature of Authorized Signatory]]></text>
 						key="textField-7"/>
 					<box></box>
 					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
-						<font size="12"/>
+						<font size="10"/>
 					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["Representing <style isBold=\"true\">"+$F{particulars}+"</style>"
-
-]]></textFieldExpression>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Representing <style isBold=\"true\">"+$F{particulars}+"</style>"]]></textFieldExpression>
 				</textField>
 			</band>
 		</detail>
