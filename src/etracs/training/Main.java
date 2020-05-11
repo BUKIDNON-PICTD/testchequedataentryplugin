@@ -18,9 +18,11 @@ public class Main {
             Map roles = new HashMap();
             roles.put("TREASURY.CHECKTRANSMITTAL", null);
             roles.put("TREASURY.CHECKPRINT", null);
+            //roles.put("TREASURY.CHECKPRINTADD", null);
             roles.put("TREASURY.CHECKDEPOSIT", null);
             roles.put("TREASURY.RB", null);
             roles.put("TREASURY.CHECKMASTER", null);
+            roles.put("TREASURY.CHECKINVENTORY", null);
             Map profile = new HashMap();
             profile.put("CLIENTTYPE", "desktop");
             profile.put("USERID", "ADMIN");

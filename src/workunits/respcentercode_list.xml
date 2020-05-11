@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="respcentercode" allowDelete = "false">
+    <invokers>
+        <invoker folderid="home/check" caption="Resp Center Codes" action="init" role="CHECKPRINTADD"/>
+    </invokers>
+</workunit>

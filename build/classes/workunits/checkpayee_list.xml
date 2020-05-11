@@ -1,4 +1,4 @@
-<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checkpayee" allowDelete = "false">
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checkpayee" allowDelete = "true">
     <invokers>
         <invoker folderid="home/check" caption="Cheque Payees" action="init" role="CHECKMASTER"/>
     </invokers>

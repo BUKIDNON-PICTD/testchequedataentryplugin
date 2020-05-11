@@ -1,0 +1,10 @@
+<workunit schemaName="respcentercode">
+    <invokers>
+        <invoker type="respcentercode:create" caption="Resp Center Code Capture" action="create" role="CHECKPRINTADD"/>
+        <invoker type="respcentercode:open" caption="Resp Center Code Capture" action="open" role="CHECKPRINTADD"/>
+    </invokers>
+    <code class="test.check.models.RespCenterCodeModel" />
+    <pages>
+        <page template="test.check.views.RespCenterCodePage" />
+    </pages>
+</workunit>

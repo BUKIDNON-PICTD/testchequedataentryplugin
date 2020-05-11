@@ -1,0 +1,12 @@
+<workunit schemaName="ada">
+    <invokers>
+        <invoker type="ada:create" caption="AD/CA" action="create" role="CHECKPRINTADD"/>
+        <invoker type="ada:open" caption="AD/CA" action="open" role="CHECKPRINTADD"/>
+        <!--<invoker type="formActions" caption="Cancel" action="cancel"--> 
+                 <!--role="CHECKPRINT" visibleWhen="#{allowApprove==true}"/>-->
+    </invokers>
+    <code class="test.check.models.AdaAddInfoModel" />
+    <pages>
+        <page template="test.check.views.AdaAddInfoPage" />
+    </pages>
+</workunit>

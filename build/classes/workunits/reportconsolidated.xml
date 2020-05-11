@@ -1,0 +1,56 @@
+<workunit extends="rpt_wtemplates/ReportController.xml" >
+    <invokers>
+        <invoker folderid="/home/check" action="init" caption="Consolidated Report" 
+            target="window" index="1002" role="CHECKPRINTADD"/>
+    </invokers>
+    <code>
+
+    <![CDATA[
+
+    import com.rameses.rcp.common.*;
+    import com.rameses.rcp.annotations.*;
+    import com.rameses.osiris2.client.*;
+    import com.rameses.osiris2.reports.*;
+
+    class ConsolidatedReportController extends com.rameses.gov.etracs.rpt.report.AsyncReportController
+    {
+        @Service('TestchequeConsolidatedReportService') 
+        def svc 
+        
+        @Service("ReportParameterService")
+        def paramSvc;
+
+        String title = 'Consolidated Report'
+
+        String reportName = 'test/check/reports/consolidatedreport.jasper';
+
+        void buildReportData(entity, asyncHandler){
+            svc.getConsoReport(entity, asyncHandler)
+        }
+        
+        Map getParameters(){
+            
+            
+            //def params = paramSvc.getStandardParameter()
+       
+            //params.logos = ReportUtil.getImageAsStream("logojpg.jpg")
+            //return params 
+            
+            data.parameters.logos = ReportUtil.getImageAsStream("logojpg.jpg")
+            
+            return data.parameters;
+        }
+        
+        
+        def formControl = [
+            getFormControls: {
+                return [
+                    new FormControl( "date", [captionWidth:110, caption:'Date From', name:'entity.datefrom', required:true]),
+                    new FormControl( "date", [captionWidth:110, caption:'Date To', name:'entity.dateto', required:true])                ]    
+            },
+        ] as FormPanelModel;
+    }
+    ]]>        
+        
+    </code>
+</workunit>

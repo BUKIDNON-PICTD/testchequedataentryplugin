@@ -1,0 +1,12 @@
+<workunit schemaName="checkmain">
+    <invokers>
+        <invoker type="checkmain:create" caption="Check Add Info" action="create" role="CHECKPRINTADD"/>
+        <invoker type="checkmain:open" caption="Check Add Info" action="open" role="CHECKPRINTADD"/>
+        <!--<invoker type="formActions" caption="Cancel" action="cancel"--> 
+                 <!--role="CHECKPRINT" visibleWhen="#{allowApprove==true}"/>-->
+    </invokers>
+    <code class="test.check.models.CheckMainAddInfoModel" />
+    <pages>
+        <page template="test.check.views.CheckMainAddInfoPage" />
+    </pages>
+</workunit>

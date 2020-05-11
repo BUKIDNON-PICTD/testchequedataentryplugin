@@ -1,0 +1,7 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="ada" allowDelete = "false"
+                cols="txndate,controlno,adaamt,people,particulars,cashbookno,state,acctngcontrolno"
+                orderBy="txndate DESC">
+    <invokers>
+        <invoker folderid="home/check" caption="AD/CA" action="init" role="CHECKPRINTADD" />
+    </invokers>
+</workunit>

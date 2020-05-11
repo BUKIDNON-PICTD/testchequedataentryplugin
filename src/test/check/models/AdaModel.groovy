@@ -39,13 +39,23 @@ class AdaModel extends CrudFormModel{
    
     public void afterCreate(){
         entity.txndate = dtSvc.getBasicServerDate();
-     
+        entity.items = [];
     }
     
     public void beforeSave(o){
         entity.controlno = dtSvc.getServerYear() +"-"+dtSvc.getServerMonth() +"-"+ seqSvc.getNextFormattedSeries('ada' + dtSvc.getServerYear()) ;
         entity.adaamtwords = numSvc.doubleToWords(entity.adaamt).toUpperCase() + " PESOS ONLY";
         entity.state = "DRAFT"
+        entity.recordlog_datecreated = dtSvc.getServerDate();
+        entity.recordlog_createdbyuser = OsirisContext.env.FULLNAME;
+        entity.recordlog_createdbyuserid = OsirisContext.env.USERID;
+    }
+    
+    public void afterEdit(){
+        entity.recordlog_dateupdated = dtSvc.getServerDate();
+        entity.recordlog_lastupdatedbyuser = OsirisContext.env.FULLNAME;
+        entity.recordlog_lastupdatedbyuserid = OsirisContext.env.USERID;
+        itemHandler.reload();
     }
    
      /* ========== Lookup Account ========= */

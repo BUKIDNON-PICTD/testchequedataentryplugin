@@ -1,10 +1,10 @@
 <folders>
-    <!-- <folder id="explorer">
-        <folder id="Transactions" caption="Payment Order" index="100">
-            <folder id="Treasury" caption="Payment Order"></folder>
-                <folder id="paymentorder" caption="Payment Order"></folder>        
+    <folder id="explorer">
+        <folder id="Master" caption="Check Master" index="100">
+            <folder id="Check" caption="Check Master"></folder>
+                <folder id="check" caption="Check Master"></folder>        
          </folder> 
-    </folder> -->
+    </folder>
     
     
     <folder id="home">

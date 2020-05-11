@@ -8,6 +8,8 @@ import com.rameses.osiris2.common.*;
 import com.rameses.util.*;
 
 class CheckPayeeModel extends CrudFormModel{
+    
+    boolean editAllowed = true;
 
    
 }

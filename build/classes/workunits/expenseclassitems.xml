@@ -1,0 +1,10 @@
+<workunit schemaName="expenseclassitems">
+    <invokers>
+        <invoker type="expenseclassitems:create" caption="Capture Dues" action="create" role="CHECKPRINTADD"/>
+        <invoker type="expenseclassitems:open" caption="Capture Dues" action="open" role="CHECKPRINTADD"/>
+    </invokers>
+    <code class="test.check.models.expenseclassitemsModel" />
+    <pages>
+        <page template="test.check.views.expenseclassitemsPage" />
+    </pages>
+</workunit>

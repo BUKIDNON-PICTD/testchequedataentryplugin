@@ -43,13 +43,22 @@ class CheckMainModel extends CrudFormModel{
    
     public void afterCreate(){
         entity.checkdate = dtSvc.getBasicServerDate();
-        
+        entity.state = "DRAFT"
         
     }
     
     public void beforeSave(o){
         entity.checkamtwords = numSvc.doubleToWords(entity.checkamt).toUpperCase() + " PESOS ONLY";
-        entity.state = "DRAFT"
+       // entity.state = "DRAFT"
+        entity.recordlog_datecreated = dtSvc.getServerDate();
+        entity.recordlog_createdbyuser = OsirisContext.env.FULLNAME;
+        entity.recordlog_createdbyuserid = OsirisContext.env.USERID;
+    }
+    
+    public void afterEdit(){
+        entity.recordlog_dateupdated = dtSvc.getServerDate();
+        entity.recordlog_lastupdatedbyuser = OsirisContext.env.FULLNAME;
+        entity.recordlog_lastupdatedbyuserid = OsirisContext.env.USERID;
     }
 
     /* ========== Lookup Payee ========= */
@@ -103,6 +112,20 @@ class CheckMainModel extends CrudFormModel{
             entity.reason = (MsgBox.prompt('Reason for cancelling?'))
             rbService.postCancelledCheck(entity);
         }
+    }
+    
+//    def viewReport(){
+//        return Inv.lookupOpener('checkmain:reports')
+//    }
+
+      def viewReport() {
+        def op = new PopupMenuOpener();
+        try {
+            def list = Inv.lookupOpeners('checkmain:form:reports', [entity]);
+            if(!list) throw new Exception("No reports are defined for " );
+            op.addAll( list );
+        } catch(Throwable ign){;}
+        return op;
     }
     
   

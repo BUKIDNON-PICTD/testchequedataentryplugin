@@ -1,4 +1,6 @@
-<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checkmain" allowDelete = "false">
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checkmain" allowDelete = "false"
+            cols="payee,checknumber,checkdate,checkamt,officeorigin,checktype,state,particulars,iscashadvance"
+                orderBy="checkdate DESC">
     <invokers>
         <invoker folderid="home/check" caption="Cheque Print" action="init" role="CHECKPRINT" />
     </invokers>

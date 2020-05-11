@@ -1,0 +1,8 @@
+<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" 
+         schemaName="respcentercode">
+  <invokers>
+      <invoker type="respcentercode:lookup" caption="Lookup Resp Center Code" 
+                 action="init" target="popup" height="350"  
+                 cols="respcentercodename,respcentercode"/>
+  </invokers>
+</workunit>
