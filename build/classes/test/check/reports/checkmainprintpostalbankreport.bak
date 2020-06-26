@@ -42,7 +42,7 @@
 					<reportElement
 						x="66"
 						y="40"
-						width="289"
+						width="359"
 						height="18"
 						key="textField"/>
 					<box leftPadding="4"></box>

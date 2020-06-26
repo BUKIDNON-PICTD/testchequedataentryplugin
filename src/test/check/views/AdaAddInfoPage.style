@@ -6,6 +6,16 @@
     enabled:true;
 }
 
+"entity.*|selectedDue"[mode != 'read']{
+    enabled:true;
+}
+"entity.*|selectedDue"[mode != 'read']{
+    readonly:false;
+}
+
+"entity.*|selectedDue"[mode == 'read']{
+    enabled:false;
+}
 
 
 "entity.objid"[mode == 'edit']{

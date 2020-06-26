@@ -40,27 +40,27 @@
 			<band height="184"  isSplitAllowed="true" >
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="64"
+						x="87"
 						y="34"
-						width="371"
+						width="348"
 						height="18"
 						key="textField"/>
 					<box leftPadding="4"></box>
 					<textElement>
-						<font fontName="Calibri" size="12"/>
+						<font fontName="Cambria" size="12"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{payee}+"*"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="44"
+						x="87"
 						y="57"
-						width="511"
+						width="468"
 						height="18"
 						key="textField"/>
 					<box leftPadding="4"></box>
 					<textElement>
-						<font fontName="Calibri" size="10"/>
+						<font fontName="Cambria" size="10"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{checkamtwords}+"*"]]></textFieldExpression>
 				</textField>

@@ -40,9 +40,9 @@
 			<band height="184"  isSplitAllowed="true" >
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="102"
+						x="70"
 						y="37"
-						width="265"
+						width="370"
 						height="18"
 						key="textField"/>
 					<box leftPadding="4"></box>
@@ -51,11 +51,11 @@
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{payee}+"*"]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="102"
+						x="70"
 						y="64"
-						width="408"
+						width="465"
 						height="18"
 						key="textField"/>
 					<box leftPadding="4"></box>

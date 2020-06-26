@@ -76,41 +76,73 @@ class AdaAddInfoModel extends CrudFormModel{
 //        }
 //    }
 
+    void entityChanged(){
+        dueHandler.reload();
+    }
+
     public void afterEdit(){
         entity.recordlog_dateupdated = dtSvc.getServerDate();
         entity.recordlog_lastupdatedbyuser = OsirisContext.env.FULLNAME;
         entity.recordlog_lastupdatedbyuserid = OsirisContext.env.USERID;
+    }
+    
+//    public void beforeOpen() {
+//        entity.putAll(parententity)
+//        
+//    }
+
+    public void afterOpen(){
+//        loadpersonalinfo()
+        loaditems()
+        itemHandler.reload();
+//        attachmentListHandler.reload();
+        
     }
 
     def expenseclasses = ['100','200','300'];
     
     def provfunds = ['GF', 'SEF', 'TF'];
     
+    void loaditems(){
+        def p = [_schemaname: 'adaitems'];
+            p.findBy = [ 'parentid': entity.objid];
+        entity.items = queryService.getList( p )
+        entity.items.each{
+            it.putAll(persistenceSvc.read([_schemaname:'adaitems',objid:it.objid]))
+           // it.attachments = TagabukidDBImageUtil.getInstance().getImages(it.objid);
+        }
+    }
+    
     def selectedItem;
     
     def itemHandler = [
         
         
-        fetchList: { 
-            
-
-            
-                def p = [_schemaname: 'adaitems'];
-                p.findBy = [ 'parentid': entity.objid];
-                p.select = "adacontrolno,accountno,payeename,particulars,amount,respcentercode,fundcode,expenseclass";
-                if(!entity.items){
-                entity.items = queryService.getList( p );
-            }
-                //return queryService.getList( p );
-                return entity.items;
-            
+//        fetchList: { 
+//            
+//
+//            
+//                def p = [_schemaname: 'adaitems'];
+//                p.findBy = [ 'parentid': entity.objid];
+//                p.select = "adacontrolno,accountno,payeename,particulars,amount,respcentercode,fundcode,expenseclass";
+//                if(!entity.items){
+//                entity.items = queryService.getList( p );
+//            }
+//                //return queryService.getList( p );
+//                return entity.items;
+//            
+//        },
+        
+        fetchList: { o->
+            return entity.items;
         },
         
         createItem : {
            return[
                objid : 'AI' + new java.rmi.server.UID(),
                parentid : entity.objid,
-               isnew : false
+               isnew : true,
+               dues:[]
            ]
        },
        
@@ -148,6 +180,86 @@ class AdaAddInfoModel extends CrudFormModel{
                    selectedItem.respcentercodeid = it.objid;
                    //entity.balance = new java.text.DecimalFormat("#,##0.00").format(checkrptService.getAmountPerAccount(it.objid).endbalance);
                    binding.refresh('selectedItem.respcentercode.*'); 
+                   //binding.refresh('selectedPayorderitem.item_code.*')
+               },
+           ])
+   }
+   
+    
+    
+    def selectedDue;
+    
+    def dueHandler = [
+        
+        
+//        fetchList: { 
+//            
+//
+//            
+//                def p = [_schemaname: 'adadueitems'];
+//                p.findBy = [ 'parentid': selectedItem.objid];
+//                p.select = "duesname,amount";
+//                if(!selectedItem.dues){
+//                selectedItem.dues = queryService.getList( p );
+//            }
+//                //return queryService.getList( p );
+//                return selectedItem?.dues;
+//            
+//        },
+        fetchList: {o->
+            return selectedItem?.dues; 
+        },
+        
+        createItem : {
+           return[
+               objid : 'ADI' + new java.rmi.server.UID(),
+//               parentid : entity.objid,
+//               isnew : false
+           ]
+       },
+       
+        onRemoveItem : {
+                
+                if (MsgBox.confirm('Delete item?')) {
+                //service.deleteFarmerItems(it)
+                selectedItem.dues.remove(it)
+                persistenceSvc.removeEntity([_schemaname:'adadueitems',objid:it.objid])
+                dueHandler.reload();
+                return true;
+                
+            }
+            return false;
+        },
+        onColumnUpdate:{item,colName ->
+            selectedItem.dues.each{ y ->
+                if(item.objid == y.objid){
+                    y.duesname = item.duesname;
+                    //y.status = item.status;
+                    //y.startdate = item.startdate;
+                    //y.enddate = item.enddate;
+                    //y.eccallowed = item.eccallowed;
+                }
+            }
+        },
+        
+        onAddItem : {
+            selectedItem.dues << it; /* add to list syntax */
+            //calculatetotal()
+     }
+      
+    ] as EditorListModel;
+    
+   void refreshDue() {
+        dueHandler.reload();
+    }
+   
+    def getLookupExpenseclassitems(){
+       return Inv.lookupOpener('expenseclassitems:lookup',[
+               onselect :{
+                   selectedDue.duesname = it.duesname;
+                   selectedDue.duesnameid = it.objid;
+                   //entity.balance = new java.text.DecimalFormat("#,##0.00").format(checkrptService.getAmountPerAccount(it.objid).endbalance);
+                   binding.refresh('selectedDue.duesname.*'); 
                    //binding.refresh('selectedPayorderitem.item_code.*')
                },
            ])

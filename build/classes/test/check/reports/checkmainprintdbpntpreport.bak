@@ -47,7 +47,7 @@
 						key="textField"/>
 					<box leftPadding="4"></box>
 					<textElement>
-						<font fontName="Arial" size="12"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["*"+$F{payee}+"*"]]></textFieldExpression>
 				</textField>
